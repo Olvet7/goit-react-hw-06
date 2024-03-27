@@ -1,6 +1,6 @@
 import ContactForm from "./conmponents/ContactForm/ContactForm";
 import ContactList from "./conmponents/Contacts/ContactList/ContactList";
-import SearchBox from "./conmponents/SearchBox/SearchBox";
+import SearchBox from "./components/SearchBox/SearchBox";
 
 import "./App.css";
 
