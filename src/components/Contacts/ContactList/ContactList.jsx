@@ -1,12 +1,13 @@
 import Contact from "../../Contacts/Contact/Contact";
 import { useSelector } from "react-redux";
 import css from "../ContactList/ContactList.module.css";
-import { selectContacts } from "../../../redux/filtersSlice";
-import { contactList } from "../../../redux/contactsSlice";
+import { selectNameFilter } from "../../../redux/filtersSlice";
+import { selectContacts } from "../../../redux/contactsSlice";
+
 
 export default function ContactList() {
-  const filter = useSelector(selectContacts)
-  const allContacts = useSelector(contactList)
+  const filter = useSelector(selectNameFilter);
+  const allContacts = useSelector(selectContacts);
   const contacts = allContacts.filter((contact) => {
     return contact.name.toLowerCase().includes(filter.toLowerCase())
   })
@@ -24,18 +25,3 @@ export default function ContactList() {
   )
 }
 
-
-
-
-// export const ContactList = ({ contacts, onDeleteContact}) => {
-//   const shownContacts = useSelector(contactList);
-//   const contacts = 
-
-//   return (
-//     <div className={css.card}>
-//       {contacts.map((contact) => (
-//         <Contact key={contact.id} {...contact} onDelete={() => onDeleteContact(contact.id)}/>
-//       ))}
-//     </div>
-//   );
-// };
